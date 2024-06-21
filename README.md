@@ -1,6 +1,5 @@
 # User List Plugin
-
-**Contributors:** Ashot Hovhannisyan  
+  
 **Tags:** users, list, admin  
 **Requires at least:** PHP 7.4  
 **Tested up to:** WordPress 6.0  
