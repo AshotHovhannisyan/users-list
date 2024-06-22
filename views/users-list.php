@@ -1,51 +1,39 @@
 <div class="wrap">
     <h1>Users List</h1>
-    <table class="wp-list-table widefat fixed striped">
-        <thead>
-        <tr>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php  if ( ! empty( $users ) ) : ?>
-            <?php foreach ( $users as $user ) : ?>
-                <tr>
-                    <td><?php echo esc_html( $user->user_login ); ?></td>
-                    <td><?php echo esc_html( $user->display_name ); ?></td>
-                    <td><?php echo esc_html( $user->user_email ); ?></td>
-                    <td><?php echo esc_html( $user->roles[0] ); ?></td>
-                </tr>
-            <?php endforeach; ?>
-        <?php else : ?>
+    <?php echo do_shortcode('[import-users]') ?>
+    <div class="sort-by-role">
+        <input type="text">
+    </div>
+    <div class="ah-users-list-table">
+        <table class="ah-list-table">
+            <thead>
             <tr>
-                <td colspan="3"><?php esc_html_e( 'No users found.', 'user-list' ); ?></td>
+                <th>
+                    <span class="sort" data-orderby="user_login" data-order="DESC">Username</span>
+                    <span class="sort-icons">
+                        <i class="up-arrow"></i>
+                        <i class="down-arrow"></i>
+                    </span>
+                </th>
+                <th>
+                    <span class="sort" data-orderby="display_name" data-order="DESC">Name</span>
+                    <span class="sort-icons">
+                        <i class="up-arrow"></i>
+                        <i class="down-arrow"></i>
+                    </span>
+                </th>
+                <th>Email</th>
+                <th>Role</th>
             </tr>
-        <?php endif; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody id="user-list-table-body">
+            <?php include plugin_dir_path(__FILE__) . 'inner-users-list-table.php'; ?>
+            </tbody>
+        </table>
+    </div>
 
-    <?php
-    if ( $total_pages > 1 ) {
-        $current_url = admin_url( 'admin.php?page=users-list' );
-        $pagination_args = array(
-            'base' => add_query_arg( 'paged', '%#%', $current_url ),
-            'format' => '',
-            'prev_text' => __( '&laquo;', 'user-list' ),
-            'next_text' => __( '&raquo;', 'user-list' ),
-            'total' => $total_pages,
-            'current' => $current_page,
-        );
-        $first_page_url = add_query_arg( 'paged', 1, $current_url );
-        $last_page_url = add_query_arg( 'paged', $total_pages, $current_url );
+    <div class="pagination">
+        <?php include plugin_dir_path(__FILE__) . 'pagination.php'; ?>
+    </div>
 
-        echo '<div class="tablenav"><div class="tablenav-pages">';
-        echo '<a class="first-page page-numbers" href="' . esc_url( $first_page_url ) . '">' . __( 'First', 'user-list' ) . '</a>';
-        echo paginate_links( $pagination_args );
-        echo '<a class="last-page page-numbers" href="' . esc_url( $last_page_url ) . '">' . __( 'Last', 'user-list' ) . '</a>';
-        echo '</div></div>';
-    }
-    ?>
 </div>

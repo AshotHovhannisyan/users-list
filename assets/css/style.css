@@ -1,3 +1,7 @@
+.sort-by-role{
+    margin: 20px 0;
+}
+
 .tablenav-pages {
     margin: 20px 0;
     text-align: center;
@@ -23,4 +27,100 @@
 .tablenav-pages .page-numbers:hover {
     background-color: #0073aa;
     color: #ffffff;
+}
+
+/*//*/
+.ah-users-list-table{
+    min-height: 430px;
+}
+
+.ah-list-table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.ah-list-table {
+    border: 1px solid #ddd;
+}
+
+.ah-list-table.fixed {
+    table-layout: fixed;
+}
+
+.ah-list-table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.ah-list-table th {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+.ah-list-table th span{
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ah-list-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ah-list-table tr:hover {
+    background-color: #e9e9e9;
+}
+
+.ah-list-table .check-column {
+    width: 50px;
+    text-align: center;
+}
+
+.ah-list-table .column-title {
+    font-weight: bold;
+}
+
+.ah-list-table .column-description {
+    color: #666;
+}
+
+/* Additional custom styles */
+.ah-list-table th, .ah-list-table td {
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.ah-list-table .column-title {
+    color: #333;
+}
+
+.ah-list-table .alternate {
+    background-color: #f2f2f2;
+}
+
+/* Styling for sort icons */
+.sort-icons {
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.sort-icons i {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    margin: 2px 0;
+}
+
+.up-arrow {
+    border-bottom: 5px solid #222;
+}
+
+.down-arrow {
+    border-top: 5px solid #222;
 }
