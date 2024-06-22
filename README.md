@@ -17,10 +17,5 @@ User List Plugin is a simple WordPress plugin that displays a paginated list of 
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Navigate to 'User List' in the admin menu to see the list of users.
 
-## Upgrade Notice
-
-### 1.0.0
-* Initial release.
-
 ## License
 This plugin is licensed under the GPLv3. See the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html) for more details.
